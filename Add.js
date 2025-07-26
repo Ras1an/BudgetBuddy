@@ -83,8 +83,7 @@ function EditExpense(expenseIndex){
 
 function LoadCategories(){
   const categoriesElement =  document.getElementById("categories");
-      const cateogries = localStorage.getItem("cateogries").split(",");
-      console.log(cateogries);
+      const cateogries = ["Food & Groceries", "Rent", "Health & Medical", "Transportation", "Education", "Personal", "Car", "Entertainment", "Others"];
        cateogries.forEach(cateogry => {
          let option = document.createElement("option");
          option.textContent = cateogry;   
