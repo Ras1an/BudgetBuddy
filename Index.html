@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+    <div id="nav">
+    <h1>Budget Buddy</h1>
+    <img id="icon" src="images/icon.png">
+    </div>
+    <div id="mainPage">
+        <div class="box" id="balance">Balance: 40$</div>
+        <div class="box" id="income">Income: 100$</div>
+        <div class="box" id="expense">Expense: 60$</div>
+    </div>
+    <h3>Expenses</h3>
+    <select id="expenseInterval">
+            <option value="All">All</option>
+            <option value="Today">Today</option>
+            <option value="Month">Month</option>
+        </select><br>
+    <div id="expenseList">
+        <div class="expenseHeader">
+        <span>Name</span>
+        <span>Category</span>
+        <span>Amount</span>
+        </div>
+    </div>
+    <a href="Add.html">
+    <button class="box" id="addExpenseBtn" onclick="">Add New Expense</button>
+    </a>
+    </div>
+    <script type="module" src="Index.js"></script>
+</body>
+</html>

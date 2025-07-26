@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Add.css">
+    <title>Add Expense</title>
+</head>
+<body>
+    <form id="addForm">
+        <h1>Add Expense</h1>
+        <input id="name" placeholder="Expense Name"><br>
+        <select id="categories">
+            <option>Select Category</option>
+        </select><br>
+        <input id="amount" type="number" min="1" placeholder="Amount"><br><br>
+    <button id="addExpense">Save</button>
+    <div id="message" class="hidden"></div>
+    </form>
+</body>
+<script type="module" src="Add.js"></script>
+</html>
