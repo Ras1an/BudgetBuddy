@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", event => {
     let interval = localStorage.getItem("selectedInterval") || "All";
     expenseInterval.value = interval;
     let {first, last} = getExpenses(interval);
+    console.log(first, last);
     RenderExpenses(first, last);
 
 
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", event => {
          RenderUserData();
 
     }
+
 });
 
 
@@ -79,13 +81,22 @@ function getExpenses(interval){
         }
         else if(interval == "Month"){
              for(let i = expenses.length - 1 ; i >= 0 ; i--){
+                
                 let expenseDate = new Date(expenses[i].date);
-                if(last === -1 && isSameMonth(expenseDate, currentDate))
+                if(last === -1 && isSameMonth(expenseDate, currentDate)){
+                    console.log("first case");
+                    console.log("dsffhds");
+                    console.log("First: ", first, "Last: ", last);
                     last = i;
-                if(isSameMonth(expenseDate, currentDate))
+                }
+                if(isSameMonth(expenseDate, currentDate)){
+                    console.log("first case");
                     first = i;
-                else
+                    console.log("First: ", first, "Last: ", last);
+                }
+                else{console.log("first case");
                     break;
+                }
             }   
         }
         else{
@@ -93,6 +104,7 @@ function getExpenses(interval){
             last = expenses.length - 1;
         }  
 
+        console.log(first, last);
         return {first, last};
     }
 
@@ -100,6 +112,9 @@ function getExpenses(interval){
 function RenderExpenses(first, last){
     const expenseContainer = document.getElementById("expenseList");
     expenseContainer.innerHTML = "";
+    if(first == -1 && last == -1)
+        return;
+    console.log(expenses);
     for(let i = last; i >= first ; i--){
         let exp = expenses[i];
         const div = document.createElement("div");

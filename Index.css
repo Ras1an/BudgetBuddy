@@ -126,3 +126,13 @@ h1{
     border-radius: 5px;
     border: none;
 }
+
+#visualizeBtn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+#visualizeBtn:active{
+    background-color: hsla(61, 55%, 83%, 0.708);
+
+}

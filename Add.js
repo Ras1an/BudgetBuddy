@@ -86,7 +86,7 @@ function LoadCategories(){
       const cateogries = ["Food & Groceries", "Rent", "Home", "Family", "Health & Medical", "Transportation", "Education", "Personal", "Car", "Entertainment", "Others"];
        cateogries.forEach(cateogry => {
          let option = document.createElement("option");
-         option.textContent = cateogry;   
+         option.textContent = cateogry;
          categoriesElement.appendChild(option);
        }); 
 }
