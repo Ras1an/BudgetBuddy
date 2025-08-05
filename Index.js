@@ -112,8 +112,13 @@ function getExpenses(interval){
 function RenderExpenses(first, last){
     const expenseContainer = document.getElementById("expenseList");
     expenseContainer.innerHTML = "";
-    if(first == -1 && last == -1)
+    if(first == -1 && last == -1){
+        const div = document.createElement("div");
+        div.textContent = "No Data to Display";
+        div.classList = "expenseItem";
         return;
+    }
+        
     console.log(expenses);
     for(let i = last; i >= first ; i--){
         let exp = expenses[i];

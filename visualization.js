@@ -58,6 +58,9 @@ function draw(categoryTotals){
     //const cateogries = ["Food & Groceries", "Rent", "Home", "Family", "Health & Medical", "Transportation", "Education", "Personal", "Car", "Entertainment", "Others"];
   // const categoryTotals = SumEachCategory();
 
+  if(!categoryTotals){
+    
+  }
   const ctx = document.getElementById('expensesChart').getContext('2d');
 
   if (chartInstance) {
