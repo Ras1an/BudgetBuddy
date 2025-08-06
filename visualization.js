@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", event => {
     let {first, last} = getExpenses(interval);
     console.log(first, last);
 
+    
     let expencesToDraw = SumEachCategory(first, last);
 
     
@@ -37,6 +38,8 @@ class Category{
 
 
 function SumEachCategory(start, end){
+      if(start == -1 && end == -1)
+        return null;
 
       const categoryTotals = {};
 
@@ -58,14 +61,17 @@ function draw(categoryTotals){
     //const cateogries = ["Food & Groceries", "Rent", "Home", "Family", "Health & Medical", "Transportation", "Education", "Personal", "Car", "Entertainment", "Others"];
   // const categoryTotals = SumEachCategory();
 
-  if(!categoryTotals){
-    
-  }
+  if (chartInstance)
+        chartInstance.destroy();
+
+  
+  if(!categoryTotals)
+    return;
+
+
   const ctx = document.getElementById('expensesChart').getContext('2d');
 
-  if (chartInstance) {
-        chartInstance.destroy();
-    }
+  
 
   const data = {
     labels: Object.keys(categoryTotals),
