@@ -53,6 +53,12 @@ function ValidateExpense(){
           MakeMessage("Amount Can not be Negative!", "red");
           return false;
         }
+        if(amountValue > balance){
+  
+        MakeMessage("❌ Expense can not be greater than balance!", "red");
+        return false;
+      }
+        }
       }
       return true;     
 }
@@ -62,6 +68,8 @@ function EditExpense(expenseIndex){
         if(validExpense){
         const oldAmount = Number(expenses[expenseIndex].amount);
 
+
+       
         expenses[expenseIndex].name = name.value;
         expenses[expenseIndex].cateogry = categories.value;
         expenses[expenseIndex].amount = amount.value;
@@ -118,10 +126,11 @@ function addExpense(){
         amount: amount.value,
         date: date
       };
+      
+      let amountValue = Number(amount.value);
 
       expenses.push(newExpense);
       localStorage.setItem("expenses", JSON.stringify(expenses));
-      let amountValue = Number(amount.value);
       balance -= amountValue;
       localStorage.setItem("balance", balance);
 
