@@ -57,9 +57,8 @@ function ValidateExpense(){
   
         MakeMessage("❌ Expense can not be greater than balance!", "red");
         return false;
-      }
         }
-      }
+        }
       return true;     
 }
 function EditExpense(expenseIndex){
