@@ -2,8 +2,8 @@
 
 A simple and intuitive web-based expense tracker that helps you manage your personal finances by tracking income, expenses, and maintaining a budget balance.
 
-🔗 <a href="https://ras1an.github.io/BudgetBuddy/" target="_blank">Live Demo</a>  
-🎥 <a href="https://drive.google.com/file/d/109ibTxPUvqVvRn_u5ch4XG7E5o1982Tb/view?usp=sharing" target="_blank">Video Demo</a>
+🔗 [Live Demo](https://ras1an.github.io/BudgetBuddy/)  
+🎥 [Video Demo](https://drive.google.com/file/d/109ibTxPUvqVvRn_u5ch4XG7E5o1982Tb/view?usp=sharing)
 
 
 ## Features
