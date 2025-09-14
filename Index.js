@@ -6,23 +6,31 @@ let balance = Number(localStorage.getItem("balance"));
 let income = Number(localStorage.getItem("income"));
 let expense = Number(localStorage.getItem("expense"));
 
+
 document.addEventListener("DOMContentLoaded", event => {
     RenderUserData();
 
     const expenseInterval = document.getElementById("expenseInterval");
-
+    
+    
     let interval = localStorage.getItem("selectedInterval") || "All";
-    expenseInterval.value = interval;
-    let {first, last} = getExpenses(interval);
-    console.log(first, last);
-    RenderExpenses(first, last);
+    function syncInterval(){
+        expenseInterval.value = interval;
+        let {first, last} = getExpenses(interval);
+        console.log(first, last);
+        RenderExpenses(first, last);
 
-
+    }
+    syncInterval();
     expenseInterval.addEventListener("change", function(){
         interval = expenseInterval.value;
         localStorage.setItem("selectedInterval", interval);
         const {first, last} = getExpenses(interval);
         RenderExpenses(first, last);
+    });
+
+    window.addEventListener("pageshow", () => {
+        syncInterval();
     });
 
     const incomeBtn = document.getElementById("income");

@@ -52,12 +52,11 @@ function ValidateExpense(){
         if(amountValue < 0){
           MakeMessage("Amount Can not be Negative!", "red");
           return false;
-        }
+         }
         if(amountValue > balance){
-  
         MakeMessage("❌ Expense can not be greater than balance!", "red");
         return false;
-        }
+          }
         }
       return true;     
 }
